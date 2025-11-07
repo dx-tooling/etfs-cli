@@ -4,19 +4,21 @@
 
 This is a work-in-progress technical preview — it's ready to use, but the developer experience is not yet streamlined.
 
+
 ## Setup
 
-Run `curl -sSL https://get.rvm.io | bash`
+Run `curl -sSL https://raw.githubusercontent.com/dx-tooling/etfs-cli/refs/heads/main/install.sh | bash`
 
-### Scratchbook
 
-    echo "ETFS_PROJECT_NAME=foobar" >> .env
-    docker compose up --build
-    mise run in-app-container mise trust
-    mise run in-app-container mise install
-    mise run console doctrine:database:create
-    mise run console doctrine:migrations:migrate --no-interaction
-    mise run frontend
+## Scratchbook
+
+Quick test-drive in Ubuntu 24.04:
+
+```bash
+docker run -it --rm -v "$(pwd):/root/src" ubuntu:24.04 bash
+```
+
+This mounts the project root into the container at `~/src` and starts an interactive bash session.
 
 
 ## Background
